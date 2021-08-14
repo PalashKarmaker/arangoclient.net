@@ -33,11 +33,6 @@ using System.Collections;
 using System.Globalization;
 using System.Text;
 using Newtonsoft.Json;
-#if !HAVE_LINQ
-using Newtonsoft.Json.Utilities.LinqBridge;
-#else
-using System.Linq;
-#endif
 using Newtonsoft.Json.Serialization;
 
 namespace ArangoDB.Client.Utility.Newtonsoft.Json
@@ -86,11 +81,7 @@ namespace ArangoDB.Client.Utility.Newtonsoft.Json
 
         static ReflectionUtils()
         {
-#if HAVE_EMPTY_TYPES
             EmptyTypes = Type.EmptyTypes;
-#else
-            EmptyTypes = CollectionUtils.ArrayEmpty<Type>();
-#endif
         }
 
         public static bool IsVirtual(this PropertyInfo propertyInfo)
@@ -226,7 +217,7 @@ namespace ArangoDB.Client.Utility.Newtonsoft.Json
         {
             ValidationUtils.ArgumentNotNull(t, nameof(t));
 
-            if (t.IsValueType())
+            if (t.IsValueType)
             {
                 return true;
             }
@@ -254,7 +245,7 @@ namespace ArangoDB.Client.Utility.Newtonsoft.Json
         {
             ValidationUtils.ArgumentNotNull(t, nameof(t));
 
-            if (t.IsValueType())
+            if (t.IsValueType)
             {
                 return IsNullableType(t);
             }
@@ -1060,7 +1051,7 @@ namespace ArangoDB.Client.Utility.Newtonsoft.Json
 
         public static object GetDefaultValue(Type type)
         {
-            if (!type.IsValueType())
+            if (!type.IsValueType)
             {
                 return null;
             }

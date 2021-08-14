@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <Version>0.7.70</Version>
-    <TargetFrameworks>netstandard2.0;netstandard1.3;</TargetFrameworks>
+	  <TargetFramework>net6.0</TargetFramework>
     <Description>.NET client for ArangoDB with LINQ provider</Description>
     <NeutralLanguage>en-US</NeutralLanguage>
     <Authors>raoof hojat</Authors>
@@ -31,6 +31,11 @@
     <PackageReference Include="Microsoft.CSharp" Version="4.4.1" />
     <PackageReference Include="System.ComponentModel.TypeConverter" Version="4.3.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Remotion.Linq" Version="2.2.0" />
+  </ItemGroup>
   <PropertyGroup Condition="'$(TargetFramework)'=='netstandard1.3'">
     <AssemblyTitle>ArangoDB.Client Netstandard_1.3</AssemblyTitle>
     <DefineConstants>NETSTANDARD1_3;PORTABLE;HAVE_ASYNC;HAVE_BIG_INTEGER;HAVE_BINARY_SERIALIZATION;HAVE_COVARIANT_GENERICS;HAVE_DATA_CONTRACTS;HAVE_DATE_TIME_OFFSET;HAVE_DYNAMIC;HAVE_EXPRESSIONS;HAVE_FSHARP_TYPES;HAVE_GUID_TRY_PARSE;HAVE_HASH_SET;HAVE_IGNORE_DATA_MEMBER_ATTRIBUTE;HAVE_INOTIFY_COLLECTION_CHANGED;HAVE_INOTIFY_PROPERTY_CHANGING;HAVE_ISET;HAVE_LINQ;HAVE_METHOD_IMPL_ATTRIBUTE;HAVE_NON_SERIALIZED_ATTRIBUTE;HAVE_READ_ONLY_COLLECTIONS;HAVE_REFLECTION_BINDER;HAVE_SERIALIZATION_BINDER_BIND_TO_NAME;HAVE_STRING_JOIN_WITH_ENUMERABLE;HAVE_TIME_SPAN_PARSE_WITH_CULTURE;HAVE_TIME_SPAN_TO_STRING_WITH_CULTURE;HAVE_TIME_ZONE_INFO;HAVE_TYPE_DESCRIPTOR;HAVE_UNICODE_SURROGATE_DETECTION;HAVE_VARIANT_TYPE_PARAMETERS;HAVE_VERSION_TRY_PARSE;HAVE_XLINQ;HAVE_OBSOLETE_FORMATTER_ASSEMBLY_STYLE;HAVE_XML_DOCUMENT;HAVE_CONCURRENT_DICTIONARY;HAVE_ICONVERTIBLE;</DefineConstants>
@@ -38,6 +43,7 @@
   <PropertyGroup>
     <NoWarn>1701;1702;1705,1591,1573,1572,1570,1711</NoWarn>
     <PackageReleaseNotes>.NET Core 2.0 release</PackageReleaseNotes>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
   
   <!--<ItemGroup Condition="'$(TargetFramework)'=='net46'">
