@@ -15,7 +15,7 @@ namespace ArangoDB.Client.Utility
     {
         public static T GetAttribute<T>(object attributeProvider, bool inherit) where T : Attribute
         {
-            return Newtonsoft.Json.ReflectionUtils.GetAttribute<T>(attributeProvider, inherit);
+            return Newtonsoft.Json.Utilities.ReflectionUtils.GetAttribute<T>(attributeProvider, inherit);
         }
 
         public static PropertyInfo GetProperty(Type type, string name)
@@ -47,7 +47,7 @@ namespace ArangoDB.Client.Utility
 
         public static List<MemberInfo> GetFieldsAndProperties_PublicInstance(Type type)
         {
-            return Newtonsoft.Json.ReflectionUtils.GetFieldsAndProperties(type, BindingFlags.Public | BindingFlags.Instance);
+            return Newtonsoft.Json.Utilities.ReflectionUtils.GetFieldsAndProperties(type, BindingFlags.Public | BindingFlags.Instance);
         }
 
         public static MemberInfo[] GetMember(Type type, string member)
