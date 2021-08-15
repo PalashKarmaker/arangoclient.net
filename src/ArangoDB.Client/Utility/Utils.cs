@@ -1,5 +1,4 @@
 ﻿using ArangoDB.Client.Data;
-using System;
 using System.Linq.Expressions;
 using System.Reflection;
 
@@ -10,9 +9,7 @@ namespace ArangoDB.Client.Utility
         public static string ResolveId(string id, string collectionName = null)
         {
             if (id.IndexOf("/") == -1)
-            {
                 return $"{StringUtils.Encode(collectionName)}/{StringUtils.Encode(id)}";
-            }
             else
             {
                 string[] splited = id.Split('/');
